@@ -1,0 +1,38 @@
+/* $color_blue: #1769ff  */
+/* $color_green: #70b29c */
+
+* {
+  font-family: 微軟正黑體;
+}
+
+nav {
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+  letter-spacing: 0.6px;
+}
+
+nav a:not(.navbar-brand) {
+  font-size: 17px;
+  font-weight: 700;
+}
+
+nav a:not(.navbar-brand):hover {
+  color: white;
+  border-bottom: 1px solid white;
+}
+
+.jumbotron-fluid {
+  height: 100vh;
+  background-image: url(https://images.unsplash.com/photo-1482939968273-b388a71b768f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80);
+  background-position: center center;
+  background-size: cover;
+  /* background-attachment: fixed */
+}
+
+section {
+  padding: 5rem 0;
+}
+
+.table td,
+.table th {
+  padding: .6rem;
+}
