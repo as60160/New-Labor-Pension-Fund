@@ -58,6 +58,8 @@ $(function () {
           responsive: true,
         }
       })
+
+      s.refresh();
     }
   });
 
@@ -112,6 +114,8 @@ $(function () {
           responsive: true,
         }
       })
+
+      s.refresh();
     }
   });
 
@@ -152,9 +156,10 @@ $(function () {
           responsive: true,
         }
       })
+
+      s.refresh();
     }
   });
-
 
 
 
@@ -314,6 +319,7 @@ $(function () {
   //     })
   //   }
   // });
+
 
 
   $(document).on('click', 'a', function (event) {

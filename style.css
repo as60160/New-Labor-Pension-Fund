@@ -12,7 +12,7 @@ nav {
 
 nav a:not(.navbar-brand) {
   font-size: 17px;
-  font-weight: 700;
+  font-weight: 500;
 }
 
 nav a:not(.navbar-brand):hover {
