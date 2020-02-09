@@ -2,9 +2,9 @@ $(function () {
   var s = skrollr.init();
 
   var apiurl = {
-    newLaborPensionFundByMonth: "data/newLaborPensionFundByMonth_202001_update.json",
-    newLaborPensionFundByYear: "data/newLaborPensionFundByYear_2019_update.json",
-    laborPensionFundInvestmentStockType: "data/laborPensionFundInvestmentStockType_202001_update.json"
+    newLaborPensionFundByMonth: "data/newLaborPensionFundByMonth_202002_update.json",
+    newLaborPensionFundByYear: "data/newLaborPensionFundByYear_2020_update.json",
+    laborPensionFundInvestmentStockType: "data/laborPensionFundInvestmentStockType_202002_update.json"
   };
 
 
