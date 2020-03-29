@@ -34,5 +34,7 @@ section {
 
 .table td,
 .table th {
-  padding: .6rem;
+  padding: .4rem;
+  font-size: 14px;
+
 }
