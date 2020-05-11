@@ -2,11 +2,13 @@ $(function () {
   var s = skrollr.init();
 
   var apiurl = {
-    newLaborPensionFundByMonth: "data/newLaborPensionFundByMonth_202004_update.json",
-    newLaborPensionFundByYear: "data/newLaborPensionFundByYear_2020_update.json",
-    laborPensionFundInvestmentStockType: "data/laborPensionFundInvestmentStockType_202004_update.json"
+    newLaborPensionFundByMonth:
+      'data/newLaborPensionFundByMonth_202005_update.json',
+    newLaborPensionFundByYear:
+      'data/newLaborPensionFundByYear_2020_update.json',
+    laborPensionFundInvestmentStockType:
+      'data/laborPensionFundInvestmentStockType_202005_update.json',
   };
-
 
   $.ajax({
     url: apiurl.newLaborPensionFundByMonth,
@@ -25,44 +27,46 @@ $(function () {
         dataset2.push(rateOfGuarantee);
 
         // 繪製表格
-        $("#tableForNewByMonth").append(
-          "<tr><th>" +
-          month +
-          "</th><td>" +
-          rateOfInvestment +
-          "</td><td>" +
-          rateOfGuarantee +
-          "</td></tr>"
+        $('#tableForNewByMonth').append(
+          '<tr><th>' +
+            month +
+            '</th><td>' +
+            rateOfInvestment +
+            '</td><td>' +
+            rateOfGuarantee +
+            '</td></tr>'
         );
       }
 
       // 繪製折線圖
-      var ctx = $("#chartForNewByMonth");
+      var ctx = $('#chartForNewByMonth');
       var chart = new Chart(ctx, {
-        type: "line",
+        type: 'line',
         data: {
           labels: labels,
-          datasets: [{
-            label: "收益率",
-            data: dataset1,
-            borderColor: "#1769ff",
-            fill: false
-          }, {
-            label: "保證收益率",
-            data: dataset2,
-            borderColor: "#70b29c",
-            fill: false
-          }]
+          datasets: [
+            {
+              label: '收益率',
+              data: dataset1,
+              borderColor: '#1769ff',
+              fill: false,
+            },
+            {
+              label: '保證收益率',
+              data: dataset2,
+              borderColor: '#70b29c',
+              fill: false,
+            },
+          ],
         },
         options: {
           responsive: true,
-        }
-      })
+        },
+      });
 
       s.refresh();
-    }
+    },
   });
-
 
   $.ajax({
     url: apiurl.newLaborPensionFundByYear,
@@ -81,44 +85,46 @@ $(function () {
         dataset2.push(rateOfGuarantee);
 
         // 繪製表格
-        $("#tableForNewByYear").append(
-          "<tr><th>" +
-          year +
-          "</th><td>" +
-          rateOfInvestment +
-          "</td><td>" +
-          rateOfGuarantee +
-          "</td></tr>"
+        $('#tableForNewByYear').append(
+          '<tr><th>' +
+            year +
+            '</th><td>' +
+            rateOfInvestment +
+            '</td><td>' +
+            rateOfGuarantee +
+            '</td></tr>'
         );
       }
 
       // 繪製折線圖
-      var ctx = $("#chartForNewByYear");
+      var ctx = $('#chartForNewByYear');
       var chart = new Chart(ctx, {
-        type: "line",
+        type: 'line',
         data: {
           labels: labels,
-          datasets: [{
-            label: "收益率",
-            data: dataset1,
-            borderColor: "#1769ff",
-            fill: false
-          }, {
-            label: "保證收益率",
-            data: dataset2,
-            borderColor: "#70b29c",
-            fill: false
-          }]
+          datasets: [
+            {
+              label: '收益率',
+              data: dataset1,
+              borderColor: '#1769ff',
+              fill: false,
+            },
+            {
+              label: '保證收益率',
+              data: dataset2,
+              borderColor: '#70b29c',
+              fill: false,
+            },
+          ],
         },
         options: {
           responsive: true,
-        }
-      })
+        },
+      });
 
       s.refresh();
-    }
+    },
   });
-
 
   $.ajax({
     url: apiurl.laborPensionFundInvestmentStockType,
@@ -128,8 +134,8 @@ $(function () {
       var dataset2 = [];
 
       res.sort(function (a, b) {
-        return Number(b.新制勞工退休基金) > Number(a.新制勞工退休基金) ? 1 : -1
-      })
+        return Number(b.新制勞工退休基金) > Number(a.新制勞工退休基金) ? 1 : -1;
+      });
 
       for (var i = 0; i < res.length; i++) {
         var type = res[i].投資類別;
@@ -140,35 +146,34 @@ $(function () {
         dataset2.push(oldLaborFund);
       }
 
-      var ctx = $("#chartForStockType");
+      var ctx = $('#chartForStockType');
       var chart = new Chart(ctx, {
-        type: "line",
+        type: 'line',
         data: {
           labels: labels,
-          datasets: [{
-            label: "投資比例",
-            data: dataset1,
-            borderColor: "#1769ff",
-            fill: false
-          }]
+          datasets: [
+            {
+              label: '投資比例',
+              data: dataset1,
+              borderColor: '#1769ff',
+              fill: false,
+            },
+          ],
         },
         options: {
           responsive: true,
-        }
-      })
+        },
+      });
 
       s.refresh();
-    }
+    },
   });
-
-
 
   // var apiurl = {
   //   newLaborPensionFundByMonth: "https://apiservice.mol.gov.tw/OdService/rest/datastore/A17030000J-000040-wwu",
   //   newLaborPensionFundByYear: "https://apiservice.mol.gov.tw/OdService/rest/datastore/A17000000J-030177-n17",
   //   laborPensionFundInvestmentStockType: "https://apiservice.mol.gov.tw/OdService/rest/datastore/A17030000J-000036-xzj"
   // };
-
 
   // $.ajax({
   //   url: apiurl.newLaborPensionFundByMonth,
@@ -224,7 +229,6 @@ $(function () {
   //   }
   // });
 
-
   // $.ajax({
   //   url: apiurl.newLaborPensionFundByYear,
   //   success: function (res) {
@@ -279,7 +283,6 @@ $(function () {
   //   }
   // });
 
-
   // $.ajax({
   //   url: apiurl.laborPensionFundInvestmentStockType,
   //   success: function (res) {
@@ -320,15 +323,14 @@ $(function () {
   //   }
   // });
 
-
-
   $(document).on('click', 'a', function (event) {
     // event.preventDefault();
     var target = $(this).attr('href');
-    $('html,body').animate({
-      scrollTop: $(target).offset().top
-    }, 500);
+    $('html,body').animate(
+      {
+        scrollTop: $(target).offset().top,
+      },
+      500
+    );
   });
-
-
 });
