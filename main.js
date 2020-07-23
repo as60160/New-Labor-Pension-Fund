@@ -2,12 +2,9 @@ $(function () {
   var s = skrollr.init();
 
   var apiurl = {
-    newLaborPensionFundByMonth:
-      'data/newLaborPensionFundByMonth_202006_update.json',
-    newLaborPensionFundByYear:
-      'data/newLaborPensionFundByYear_2020_update.json',
-    laborPensionFundInvestmentStockType:
-      'data/laborPensionFundInvestmentStockType_202006_update.json',
+    newLaborPensionFundByMonth: 'data/newLaborPensionFundByMonth_202007_update.json',
+    newLaborPensionFundByYear: 'data/newLaborPensionFundByYear_2020_update.json',
+    laborPensionFundInvestmentStockType: 'data/laborPensionFundInvestmentStockType_202007_update.json',
   };
 
   $.ajax({
@@ -29,12 +26,12 @@ $(function () {
         // 繪製表格
         $('#tableForNewByMonth').append(
           '<tr><th>' +
-            month +
-            '</th><td>' +
-            rateOfInvestment +
-            '</td><td>' +
-            rateOfGuarantee +
-            '</td></tr>'
+          month +
+          '</th><td>' +
+          rateOfInvestment +
+          '</td><td>' +
+          rateOfGuarantee +
+          '</td></tr>'
         );
       }
 
@@ -44,8 +41,7 @@ $(function () {
         type: 'line',
         data: {
           labels: labels,
-          datasets: [
-            {
+          datasets: [{
               label: '收益率',
               data: dataset1,
               borderColor: '#1769ff',
@@ -87,12 +83,12 @@ $(function () {
         // 繪製表格
         $('#tableForNewByYear').append(
           '<tr><th>' +
-            year +
-            '</th><td>' +
-            rateOfInvestment +
-            '</td><td>' +
-            rateOfGuarantee +
-            '</td></tr>'
+          year +
+          '</th><td>' +
+          rateOfInvestment +
+          '</td><td>' +
+          rateOfGuarantee +
+          '</td></tr>'
         );
       }
 
@@ -102,8 +98,7 @@ $(function () {
         type: 'line',
         data: {
           labels: labels,
-          datasets: [
-            {
+          datasets: [{
               label: '收益率',
               data: dataset1,
               borderColor: '#1769ff',
@@ -151,14 +146,12 @@ $(function () {
         type: 'line',
         data: {
           labels: labels,
-          datasets: [
-            {
-              label: '投資比例',
-              data: dataset1,
-              borderColor: '#1769ff',
-              fill: false,
-            },
-          ],
+          datasets: [{
+            label: '投資比例',
+            data: dataset1,
+            borderColor: '#1769ff',
+            fill: false,
+          }, ],
         },
         options: {
           responsive: true,
@@ -326,8 +319,7 @@ $(function () {
   $(document).on('click', 'a', function (event) {
     // event.preventDefault();
     var target = $(this).attr('href');
-    $('html,body').animate(
-      {
+    $('html,body').animate({
         scrollTop: $(target).offset().top,
       },
       500
