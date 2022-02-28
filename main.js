@@ -3,11 +3,11 @@ $(function () {
 
   var apiurl = {
     newLaborPensionFundByMonth:
-      'data/newLaborPensionFundByMonth_202109_update.json',
+      'data/newLaborPensionFundByMonth_202202_update.json',
     newLaborPensionFundByYear:
-      'data/newLaborPensionFundByYear_2021_update.json',
+      'data/newLaborPensionFundByYear_2022_update.json',
     laborPensionFundInvestmentStockType:
-      'data/laborPensionFundInvestmentStockType_202109_update.json',
+      'data/laborPensionFundInvestmentStockType_202202_update.json',
   };
 
   $.ajax({
