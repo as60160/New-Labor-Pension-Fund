@@ -3,11 +3,11 @@ $(function () {
 
   var apiurl = {
     newLaborPensionFundByMonth:
-      'data/newLaborPensionFundByMonth_202203_update.json',
+      'data/newLaborPensionFundByMonth_202409_update.json',
     newLaborPensionFundByYear:
-      'data/newLaborPensionFundByYear_2022_update.json',
+      'data/newLaborPensionFundByYear_2024_update.json',
     laborPensionFundInvestmentStockType:
-      'data/laborPensionFundInvestmentStockType_202203_update.json',
+      'data/laborPensionFundInvestmentStockType_202409_update.json',
   };
 
   $.ajax({
@@ -132,13 +132,13 @@ $(function () {
       var dataset2 = [];
 
       res.sort(function (a, b) {
-        return Number(b.新制勞工退休基金) > Number(a.新制勞工退休基金) ? 1 : -1;
+        return Number(b['新制勞工退休基金（百分比）']) > Number(a['新制勞工退休基金（百分比）']) ? 1 : -1;
       });
 
       for (var i = 0; i < res.length; i++) {
         var type = res[i].投資類別;
-        var newLaborFund = Number(res[i].新制勞工退休基金);
-        var oldLaborFund = Number(res[i].舊制勞工退休基金);
+        var newLaborFund = Number(res[i]['新制勞工退休基金（百分比）']);
+        var oldLaborFund = Number(res[i]['舊制勞工退休基金（百分比）']);
         labels.push(type);
         dataset1.push(newLaborFund);
         dataset2.push(oldLaborFund);
